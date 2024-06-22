@@ -32,7 +32,17 @@
 
             <img src="/resources/shield_block.webp" width="48" height="48">
 
-            
+            <p>
+              Testing dynamic images based on what the browser supports<br>
+              AVIF should be used in most places<br>
+              On MS Edge, WebP will likely be used<br>
+            </p>
+
+            <picture>
+              <source srcset="/resources/Terminal.avif" type="image/avif">
+              <source srcset="/resources/Terminal.webp" type="image/webp">
+              <img src="/resources/Terminal.webp" width="512" height="512">
+            </picture>
 
         </body>
     </html>
