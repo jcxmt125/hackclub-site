@@ -20,12 +20,12 @@
         </head>
         <body style="background-color:#202020;color:#F0F0F0">
 
-            <h1>Documentation for helloworld worker</h1>
+            <h1>Documentation for random redirect worker</h1>
 
             <h2>Source code</h2>
 
             <p>
-              <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/workers/helloworld-worker.js">Main worker script</a><br>
+              <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/workers/randomredirect-worker.js">Main worker script</a><br>
             </p>
 
             <h2>Deploy instructions</h2>
@@ -62,8 +62,13 @@
                 <source srcset="/resources/documentations/cfworkers/cf-worker-editcode.webp" type="image/webp">
                 <img src="/resources/documentations/cfworkers/cf-worker-editcode.webp" alt="A photo of the edit code button." width="187" height="61">
               </picture><br>
-              Paste in the code to the edit space, and click deploy. It should be ready to use!<br>
-              Visit your worker to test it out.<br>
+              Paste in the code to the edit space.<br>
+            </p>
+            <p>
+              This requires more configuration on your side.<br>
+              Populate the urls list with your desired URLs.<br>
+              You may copy and paste the appropriate section of code to add more paths.<br>
+              Deploy your worker, then visit its URL to test it out.<br>
               For easier usage, go to settings, then triggers, and configure custom URLs or paths.<br>
               For wrangler (CLI) deploy, see <a style="color: #effab6;" href="https://developers.cloudflare.com/workers">cloudflare's documentation</a>.
             </p>
@@ -71,10 +76,10 @@
             <h2>Usage instructions</h2>
 
             <p>
-              This worker is an API.<br>
-              Try sending a GET request to the endpoint.<br>
-              You should recieve a plaintext response with the text "Hello, World!"<br>
-              There is an accompanying <a style="color: #b6defa;" href="/documentations/workers/testscripts/helloworld-worker-test.html">test script</a>.<br> 
+              This worker is meant to be accessed from a browser.<br>
+              Try visiting its URL.<br>
+              You should be 302 redirected.<br>
+              There is no test script for this worker.<br>
             </p>
 
         </body>

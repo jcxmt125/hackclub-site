@@ -25,7 +25,7 @@
             <h2>Source code</h2>
 
             <p>
-              <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/helloworld-worker-test.py">Main python script</a><br>
+              <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/whisper-worker-test.py">Main python script</a><br>
             </p>
 
             <h2>Environment configuration</h2>
@@ -41,7 +41,8 @@
             <p>
               This test script requires a .env file:<br>
               <ul>
-                <li>HELLOWORLD_WORKER_URL: the url your worker (API) is deployed to.</li>
+                <li>WHISPER_WORKER_URL: the url your worker (API) is deployed to.</li>
+                <li>WHISPER_WORKER_KEY: the "authentication key" you've deployed.</li>
               </ul>
             </p>
 
@@ -49,8 +50,9 @@
 
             <p>
               In a terminal: execute the Python file.<br>
-              It'll print the value your API returns.<br>
-              It is expected to be "Hello, world!" by default. It may differ based on your actual code.
+              It'll print the JSON your API returns.<br>
+              It is expected to be quite complicated by default.<br>
+              It should have a section where your audio is transcribed.<br>
             </p>
 
 

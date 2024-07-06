@@ -6,7 +6,7 @@
 
     
         <head>
-        <title>Documentation for helloworld worker</title>
+        <title>Documentation for the whisper worker</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300&display=swap" rel="stylesheet">
@@ -20,12 +20,12 @@
         </head>
         <body style="background-color:#202020;color:#F0F0F0">
 
-            <h1>Documentation for helloworld worker</h1>
+            <h1>Documentation for the whisper worker</h1>
 
             <h2>Source code</h2>
 
             <p>
-              <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/workers/helloworld-worker.js">Main worker script</a><br>
+              <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/workers/whisper-worker.js">Main worker script</a><br>
             </p>
 
             <h2>Deploy instructions</h2>
@@ -44,11 +44,11 @@
                 <source srcset="/resources/documentations/cfworkers/cf-workerpages.webp" type="image/webp">
                 <img src="/resources/documentations/cfworkers/cf-workerpages.webp" alt="A photo of the create option in the cloudflare dashboard." width="649" height="134">
               </picture><br>
-              Go ahead and click the "Create Worker" button!<br>
+              Find and click the Whisper worker template. <b>This step is required to generate Workers AI bindings.</b><br>
               <picture>
-                <source srcset="/resources/documentations/cfworkers/cf-worker-create-prepare.avif" type="image/avif">
-                <source srcset="/resources/documentations/cfworkers/cf-worker-create-prepare.webp" type="image/webp">
-                <img src="/resources/documentations/cfworkers/cf-worker-create-prepare.webp" alt="A photo of the create worker menu." width="649" height="236">
+                <source srcset="/resources/documentations/cfworkers/cf-worker-whisper.avif" type="image/avif">
+                <source srcset="/resources/documentations/cfworkers/cf-worker-whisper.webp" type="image/webp">
+                <img src="/resources/documentations/cfworkers/cf-worker-whisper.webp" alt="A photo of the whisper worker template button." width="476" height="276">
               </picture><br>
               Name your worker, and create it. (You may be asked to set a *.workers.dev domain!)<br>
               <picture>
@@ -68,13 +68,24 @@
               For wrangler (CLI) deploy, see <a style="color: #effab6;" href="https://developers.cloudflare.com/workers">cloudflare's documentation</a>.
             </p>
 
+            <p>
+              This requires more configuration on your side.<br>
+              Fill in [Your Unique Key].<br>
+              <span style="color: #e79494;">This authentication method isn't "secure"! For production-scale, please use another authentication method!</span>
+            </p>
+
             <h2>Usage instructions</h2>
 
             <p>
               This worker is an API.<br>
-              Try sending a GET request to the endpoint.<br>
-              You should recieve a plaintext response with the text "Hello, World!"<br>
-              There is an accompanying <a style="color: #b6defa;" href="/documentations/workers/testscripts/helloworld-worker-test.html">test script</a>.<br> 
+              Try sending a GET request to the endpoint, with the following headers:<br>
+              <ul>
+                <li>fileUrl: URL of the file you'd like to transcribe</li>
+                <li>authKey: The preset authentication key</li>
+              </ul>
+              You should recieve a JSON response.<br>
+              There is an accompanying <a style="color: #b6defa;" href="/documentations/workers/testscripts/whisper-worker-test.html">test script</a>.<br> 
+              <i>Note: Discord CDN blocks requests from the cloudflare workers platform.</i>
             </p>
 
         </body>
