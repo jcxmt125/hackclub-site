@@ -20,12 +20,12 @@
         </head>
         <body style="background-color:#202020;color:#F0F0F0">
 
-            <h1>Documentation for random redirect worker</h1>
+            <h1>Documentation for finder worker</h1>
 
             <h2>Source code</h2>
 
             <p>
-              <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/workers/randomredirect-worker.js">Main worker script</a><br>
+              <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/workers/finder-worker.js">Main worker script</a><br>
             </p>
 
             <h2>Deploy instructions</h2>
@@ -66,9 +66,9 @@
             </p>
             <p>
               This requires more configuration on your side.<br>
-              Populate the urls list with your desired URLs.<br>
-              You may copy and paste the appropriate section of code to add more paths.<br>
-              Deploy your worker, then visit its URL to test it out.<br>
+              Populate the redirectUrls list with your provider's URLs.<br>
+              Change commonExts with the extensions you usually use.<br>
+              Deploy your worker, then visit its URL to test it out. (It is expected to take a bit to find a file. Please be patient!)<br>
               For easier usage, go to settings, then triggers, and configure custom URLs or paths.<br>
               For wrangler (CLI) deploy, see <a style="color: #effab6;" href="https://developers.cloudflare.com/workers">cloudflare's documentation</a>.
             </p>
@@ -78,7 +78,7 @@
             <p>
               This worker is meant to be accessed from a browser.<br>
               Try visiting its URL.<br>
-              You should be 302 redirected.<br>
+              You should be 301 redirected.<br>
               There is no test script for this worker.<br>
             </p>
 
