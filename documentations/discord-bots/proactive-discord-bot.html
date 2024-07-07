@@ -72,8 +72,9 @@
             <h2>Usage instructions</h2>
 
             <p>
-                Invite your bot to a server from the provided 9installation URL on the Discord developer portal.<br>
+                Invite your bot to a server from the provided installation URL on the Discord developer portal.<br>
                 Run "bot_botmode_autoread.py". You must keep this running for the bot to work.<br>
+                On linux CLI, usage of tools such as "screen" is recommended.<br>
                 On first run, a directory will be created to store configurations.<br>
                 Check that the bot appears "online".
             </p>
@@ -82,6 +83,21 @@
                 Run the "$initialize" command on a channel.<br>
                 This will be considered your "main" channel.<br>
                 You may at any time run this command elsewhere to change it.<br>
+            </p>
+
+            <p>
+                The bot can only send files up to 25mbs, without relation to your Discord Nitro status.<br>
+                Exceptions are servers with higher "boost" statuses.<br>
+                Files that fail to send may cause the bot to silently fail.<br>
+                In case you are running this bot on a VPS provider, please mind the egress fee.<br>
+                The bot is designed to minimize egress whenever possible, by converting images to webp.<br>
+                For extremely long text resopnses, the bot will try to fall back to .txt files.<br>
+                When using some commands, the bot might take a bit to respond based on your server's speed (both network and CPU).<br>
+            </p>
+
+            <p>
+                To update the bot, run git pull in the directory of the bot.py file.<br>
+                Updating may change dependancies. Run pip install -r requirements.txt again.<br>
             </p>
 
             <h3>Configuration</h3>
@@ -113,7 +129,7 @@
                 The "search radius" for all AI-enabled features is 5 messages.
             </p>
 
-            <h2>Privacy</h2>
+            <h2>Privacy / Security</h2>
 
             <p>
                 When AI features are enabled, the bot looks for any new message on the main channel, and sends it to Google's Gemini API for analysis.<br>
@@ -124,6 +140,10 @@
             <p>
                 Nothing is logged to a file by default.<br>
                 Some things are printed to the terminal.<br>
+                <br>
+                The bot shouldn't be able to execute any code.<br>
+                However, some features will cause files to be downloaded to the server briefly while it processes.<br>
+                They will be deleted as soon as feasible.<br>
             </p>
 
             <h2>Fallbacks</h2>
