@@ -6,7 +6,7 @@
 
     
         <head>
-        <title>Documentation for proactive Discord bot</title>
+        <title>Documentation for memory Discord bot</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300&display=swap" rel="stylesheet">
@@ -20,12 +20,12 @@
         </head>
         <body style="background-color:#202020;color:#F0F0F0">
 
-            <h1>Documentation for proactive Discord bot</h1>
+            <h1>Documentation for memory Discord bot</h1>
 
             <h2>Source code</h2>
 
             <p>
-              <a style="color: #effab6;" href="https://github.com/jcxmt125/proactive-discord-bot">Github repository</a><br>
+              <a style="color: #effab6;" href="https://github.com/jcxmt125/memory-discord-bot">Github repository</a><br>
             </p>
 
             <h2>Environment configuration</h2>
@@ -34,6 +34,9 @@
                 First, git clone the repo.<br>
                 This bot requires additional modules: install them with "pip install -r requirements.txt".<br>
                 It is recommended to do this in a venv.<br>
+                If installing on a resource-constrained server, first run "pip install torch --no-cache-dir".<br>
+                You may have to resolve some errors. "sudo apt install libzbar0"<br>
+                See <a style="color: #effab6;" href="https://pypi.org/project/qreader/">here</a> for more information about QReader.<br>
             </p>
 
             <p>
@@ -73,52 +76,44 @@
 
             <p>
                 Invite your bot to a server from the provided 9installation URL on the Discord developer portal.<br>
-                Run "bot_botmode_autoread.py". You must keep this running for the bot to work.<br>
-                On first run, a directory will be created to store configurations.<br>
-                Check that the bot appears "online".
+                Create two directories: "ltmemories" and "stmemories".<br>
+                Run "bot.py". You must keep this running for the bot to work.<br>
+                Check that the bot appears "online".<br>
             </p>
 
             <p>
-                Run the "$initialize" command on a channel.<br>
-                This will be considered your "main" channel.<br>
-                You may at any time run this command elsewhere to change it.<br>
+                The default prefix is "?".<br>
+                Add the following command after the prefix to execute:<br>
             </p>
 
-            <h3>Configuration</h3>
-
-            <p>
-                $enable or $disable features to your liking.<br>
-                You may use all/AI/proactive in place of individual names.
-            </p>
-
-            <p>
-                For hardcoded features (proactive):<br>
-                <ul>
-                    <li>HelpEverywhere: This will allow the bot to respond with hardcoded responses anywhere. (If off: only in the main channel)</li>
-                    <li>ImageConversion: The bot will auto-convert heic and avif files to webp.</li>
-                    <li>AudioConversion: The bot will auto-convert opus files to mp3.</li>
-                    <li>TextPublish: The bot will automatically publish a txt file as a webpage.</li>
-                    <li>APNGConversion: The bot will auto convert apng files to webm.</li>
-                </ul>
-                <br>
-                For AI-enabled features (AI):<br>
-                <ul>
-                    <li>AIEnabled: Enables AI scanning in the main channel. (If off: all of the below features won't work)</li>
-                    <li>AIWebScan: scans URLs for safety.</li>
-                    <li>AIMediaLoad: downloads audio tracks from youtube.</li>
-                    <li>AIResponse: AI responds to factual questions.</li>
-                    <li>AIImagen: Generates images with Stable Diffusion.</li>
-                    <li>AIAudioTrancscribe: Transcribes audio when prompted</li>
-                </ul>
-                The "search radius" for all AI-enabled features is 5 messages.
-            </p>
+            <ul>
+                <li>llmreq [message]: Straight request to the LLM backend. No configuration / additional features. Only supports text.</li>
+                <li>dumpMemory: Sends your memory files to the channel.</li>
+                <li>current: Checks whether you are in a conversation, and whether it is "stale".</li>
+                <li>finish: Finishes the current conversation, wiping the short term memory and appending to long term memory.</li>
+                <li>stmemPurge: Purges short term memory <b>without appending to long term memory</b>.</li>
+                <li>deregisterAllMemory: <b>Permanently deletes all memory.</b> Use with caution.</li>
+                <li>talk [message]: Do conversation with the bot, using its LLM backend. SHort term memory will be automatically cleared if the conversation is "stale".</li>
+                <li>transcribe [attachment(s) (optional)]: Transcribes audio files with OpenAI whisper running on Cloudflare AI.</li>
+                <li>ytdlAudio [URL]: Downloads an audio file from YouTube.</li>
+                <li>convert [attachment(s)] [target format]: uses ffmpeg or imagemagick depending on the file's MIME type, to convert to the target format.</li>
+                <li>ffmpeg [attachment(s)] [target format]: same as above, force use of ffmpeg.</li>
+                <li>magick [attachment(s)] [target format]: same as above, force use of imagemagick.</li>
+                <li>urlscan [URL]: Scans URL with cloudflare radar.</li>
+                <li>qrscan [attachment(s) (optional)]: scans for QR codes in attached image.</li>
+                <li>publish [attachment(s) (optional)]: publishes a txt file as an HTML file to the S3 bucket.</li>
+            </ul>
 
             <h2>Privacy</h2>
 
             <p>
-                When AI features are enabled, the bot looks for any new message on the main channel, and sends it to Google's Gemini API for analysis.<br>
+                When AI features are used, the bot sends the text to Google's Gemini API for analysis.<br>
                 On free tier, Google may use this collected data to improve its models.<br>
-                Do not set the main channel to #general or similar.<br>
+            </p>
+
+            <p>
+                When "attachment optional" features are used, the bot will scan some previous messages (5 by default) to find the required file.<br>
+                If possible, attach the file to the command message directly.<br>
             </p>
 
             <p>
@@ -131,7 +126,7 @@
             <p>
                 The bot will fall back to Cloudflare AI's Llama 3 model in case Gemini API fails.<br>
                 This may be due to a rate limit, or because something else happened.<br>
-                You may notice degraded performance when this happens.<br>
+                You may notice degraded performance when this happends.<br>
             </p>
 
         </body>
