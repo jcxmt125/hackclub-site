@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="Documentation for memory Discord bot">
     <html lang="EN">
 
     
@@ -32,6 +32,7 @@
 
             <p>
                 First, git clone the repo.<br>
+                Although you could download the repo as a zip instead, cloning will allow faster updates later.<br>
                 This bot requires additional modules: install them with "pip install -r requirements.txt".<br>
                 It is recommended to do this in a venv.<br>
                 If installing on a resource-constrained server, first run "pip install torch --no-cache-dir".<br>
@@ -40,13 +41,13 @@
             </p>
 
             <p>
-                This script requires a .env file:<br>
+                This project requires a .env file:<br>
                 Cloudflare related:
                 <ul>
-                    <li>CLOUDFLARE_AI_API_KEY: an API key with access to cloudflare's AI.</li>
+                    <li>CLOUDFLARE_AI_API_KEY: an API key with access to Cloudflare's Workers AI.</li>
                     <li>CLOUDFLARE_AI_GATEWAY_SLUG: the slug you set for Cloudflare's AI gateway.</li>
-                    <li>CLOUDFLARE_USER_ID: Your cloudflare user ID: the string of letters and numbers after "dash.cloudflare.com" when logged in.</li>
-                    <li>CLOUDFLARE_RADAR_API_KEY: an API key with access to cloudflare radar.</li>
+                    <li>CLOUDFLARE_USER_ID: Your Cloudflare user ID: the string of letters and numbers after "dash.cloudflare.com" when logged in.</li>
+                    <li>CLOUDFLARE_RADAR_API_KEY: an API key with access to Cloudflare radar.</li>
                 </ul>
                 Storage related:
                 <ul>
@@ -67,7 +68,7 @@
                 You need to install more programs not covered by Python dependancies:<br>
                 <ul>
                     <li>ImageMagick: Install it, and test that you can access it either via "magick" or "convert".</li>
-                    <li>ffmpeg: Install it, and test you can access it on the cli.</li>
+                    <li>ffmpeg: Install it, and test you can access it on the CLI.</li>
                 </ul>
                 Both need to be on your PATH.
             </p>
