@@ -32,6 +32,7 @@
 
             <p>
                 First, git clone the repo.<br>
+                Although you could download the repo as a zip instead, cloning will allow faster updates later.<br>
                 This bot requires additional modules: install them with "pip install -r requirements.txt".<br>
                 It is recommended to do this in a venv.<br>
             </p>
@@ -120,7 +121,7 @@
                 For AI-enabled features (AI):<br>
                 <ul>
                     <li>AIEnabled: Enables AI scanning in the main channel. (If off: all of the below features won't work)</li>
-                    <li>AIWebScan: scans URLs for safety.</li>
+                    <li>AIWebScan: scans URLs for safety with Cloudflare radar.</li>
                     <li>AIMediaLoad: downloads audio tracks from youtube.</li>
                     <li>AIResponse: AI responds to factual questions.</li>
                     <li>AIImagen: Generates images with Stable Diffusion.</li>
@@ -149,9 +150,9 @@
             <h2>Fallbacks</h2>
 
             <p>
-                The bot will fall back to Cloudflare AI's Llama 3 model in case Gemini API fails.<br>
+                The bot will fall back to Cloudflare AI's Llama 3 model if Gemini API fails.<br>
                 This may be due to a rate limit, or because something else happened.<br>
-                You may notice degraded performance when this happens.<br>
+                You may notice degraded response performance (both speed and quality) when this happens.<br>
             </p>
 
         </body>
