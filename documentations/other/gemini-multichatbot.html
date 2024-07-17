@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documentation for Gemini powered multipurpose chatbot">
+    <html lang="EN">
+
+    
+        <head>
+        <title>Documentation for Gemini multi-chatbot</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300&display=swap" rel="stylesheet">
+        <style>
+          body {
+            font-family: 'IBM Plex Sans KR', sans-serif;;
+            padding: 10px;
+            line-height: 200%;
+          }
+        </style>
+        </head>
+        <body style="background-color:#202020;color:#F0F0F0">
+
+            <h1>Documentation for Gemini multi-chatbot</h1>
+
+            <h2>Source code</h2>
+
+            <p>
+              <a style="color: #effab6;" href="https://github.com/jcxmt125/gemini-multipurpose-chatbot">Github repository</a><br>
+            </p>
+
+            <h2>Environment configuration</h2>
+
+            <p>
+                First, git clone the repo.<br>
+                Although you could download the repo as a zip instead, cloning will allow faster updates later.<br>
+                This project requires additional modules: install them with "pip install -r requirements.txt".<br>
+                It is recommended to do this in a venv.<br>
+            </p>
+
+            <p>
+                This project requires a .env file:<br>
+                Cloudflare related:
+                <ul>
+                    <li>CLOUDFLARE_AI_API_KEY: an API key with access to Cloudflare's Workers AI.</li>
+                    <li>CLOUDFLARE_AI_GATEWAY_SLUG: the slug you set for Cloudflare's AI gateway.</li>
+                    <li>CLOUDFLARE_USER_ID: Your Cloudflare user ID: the string of letters and numbers after "dash.cloudflare.com" when logged in.</li>
+                    <li>CLOUDFLARE_RADAR_API_KEY: an API key with access to Cloudflare radar.</li>
+                </ul>
+                Storage related:
+                <ul>
+                    <li>S3COMPAT_ENDPOINT_URL: The endpoint for the S3 API</li>
+                    <li>S3KEYID: Your S3 key ID</li>
+                    <li>S3SECRET: Your S3 secret</li>
+                    <li>S3_BUCKET_PUBLIC_URL: The public URL of your S3 bucket (will be displayed to users)</li>
+                    <li>S3_BUCKET_NAME: The name of your S3 bucket</li>
+                </ul>
+                Other:
+                <ul>
+                    <li>GEMINI_API_KEY: get one from Google's AI studio. Most LLM requests will use this.</li>
+                </ul>
+            </p>
+
+            <p>
+                You need to install more programs not covered by Python dependancies:<br>
+                <ul>
+                    <li>ImageMagick: Install it, and test that you can access it either via "magick" or "convert".</li>
+                    <li>ffmpeg: Install it, and test you can access it on the cli.</li>
+                </ul>
+                Both need to be on your PATH.
+            </p>
+
+            <h2>Usage instructions</h2>
+
+            <p>
+                Run main.py, and follow setup instructions.<br>
+                This will create a config.json file in the directory.<br>
+                This file will store some options, including the bot's "personality", and its memory about you.<br>
+                This file is mostly human readable. You may modify the settings, but be careful.<br>
+                (An integrated edit settings feature will be implemented later!)<br>
+                A temp directory will also be created. Any files here may be deleted.<br>
+            </p>
+
+            <p>
+                To chat, simply enter your prompt and hit return.<br>
+                A file attachment message will be written to terminal.<br>
+                Press return again to ignore, or drag and drop a file.<br>
+                Due to some issues, the bot might be unable to process directories with spaces or non-english characters.<br>
+                Please move and rename your files to a simpler directory and try again in case of an error!<br>
+            </p>
+
+            <p>
+                To use tools, type + followed by a message.<br>
+                For example, +Help me convert a video.<br>
+                The bot will launch the appropriate tool when possible.<br>
+                The bot can use the following tools:<br>
+                <ul>
+                    <li>ffmpeg*: video/audio conversion</li>
+                    <li>imagemagick*: image conversion</li>
+                    <li>qreader: QR code scanning</li>
+                    <li>pyqrcode: QR code generation</li>
+                    <li>stable diffusion: (running on CF AI as SDXL) image generation</li>
+                    <li>Whisper: (local or on CF AI, depending on your setup) audio transcription</li>
+                </ul>
+                Tools marked with an asterisk use CLI tools on your behalf.<br>
+                Make sure they're installed!
+            </p>
+
+            <p>
+                There are some slash commands you can use. Type /h for help.<br>
+                /c will clear the short term memory, and save a summary of the current conversation into your long term memory.<br>
+                /e will do the same, but exit the script entirely.<br>
+                /f will force clear short term memory, removing it without a summary.<br>
+                The script only reads the first character.
+            </p>
+
+            <p>
+                To update the project, run git pull in the directory of the main.py file.<br>
+                Updating may change dependancies. Run pip install -r requirements.txt again.<br>
+            </p>
+
+            <h2>Privacy / Security</h2>
+
+            <p>
+                Your conversations will be sent to the Gemini API.<br>
+                On free tier, Google may use this to improve their models.<br>
+            </p>
+
+            <p>
+                Conversation summaries are logged to a file in plaintext JSON by default, to help it remember you.<br>
+                <br>
+                Some features may run CLI tools on your behalf.<br>
+            </p>
+
+            <h2>Fallbacks</h2>
+
+            <p>
+                Some features may fall back to Cloudflare AI's Llama3 model.<br>
+                Only classification tasks are done this way.<br>
+            </p>
+
+        </body>
+    </html>
