@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documentation for mc-createserver.py">
+    <html lang="EN">
+
+    
+        <head>
+        <title>Documentation for mc-createserver.py</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300&display=swap" rel="stylesheet">
+        <style>
+          body {
+            font-family: 'IBM Plex Sans KR', sans-serif;;
+            padding: 10px;
+            line-height: 200%;
+          }
+        </style>
+        </head>
+        <body style="background-color:#202020;color:#F0F0F0">
+
+            <h1>Documentation for mc-createserver.py</h1>
+
+            <h2>Source code</h2>
+
+            <p>
+              <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mc-serverdeploy.py">Main python script</a><br>
+            </p>
+
+            <h2>Environment configuration</h2>
+
+            <p>
+              This script does not require additional modules.<br>
+            </p>
+
+            <p>
+              This script does not require a .env file.<br>
+            </p>
+
+            <h2>Deploying to a server</h2>
+
+            <p>
+              This program will install a minecraft server to a linux server.<br>
+              First, move the python file to the directory you'd like to install to.<br>
+              This script was made for a linux environment.<br>
+              Execute the Python file. It'll ask you some questions.<br>
+              Follow the instructions, and a minecraft server will be installed on your current directory.<br>
+              Note the command displayed on screen, as it'll allow you to run the server.<br>
+              You'll likely be instructed to agree to the EULA.<br>
+              Open eula.txt as directed and change the value to true.<br>
+              You may delete the Python script, as it isn't needed anymore.<br>
+            </p>
+
+            <h2>More involved instructions: Deploying to Oracle Free tier</h2>
+
+            <p>
+              Guide based on <a style="color: #effab6;" href="https://blogs.oracle.com/developers/post/how-to-set-up-and-run-a-really-powerful-free-minecraft-server-in-the-cloud">this</a> official blogpost by Oracle.<br>
+              Quick note: I'm using Oracle since they have the most generous free tier.<br>
+              This may change at any time.<br>
+              I'm not responsible for any economical damages that occur due to following this guide.<br>
+            </p>
+
+            <h3>Sign up to OCS</h3>
+
+            <p>
+              Head to the <a style="color: #effab6;" href="https://www.oracle.com/cloud/free/">free tier explanation website</a> and read though <i>carefully</i>.<br>
+              Make sure you understand what's free and what isn't.<br>
+              We're looking for "Arm compute instance" of the Always free category.<br>
+              Click "start for free", and begin signing up.<br>
+            </p>
+
+            <p>
+              You'll need to provide personal information.<br>
+              <b>Read through the terms you agree to carefully.</b><br>
+              <b>Read through all appropriate warnings. Pay special attention to warnings related to A1 compute instances, as they are what we will be using.</b><br>
+              When the author was signing up, there were availability warnings for instances on the Seoul region.<br>
+              Make sure to use your own judgement when choosing your home region.<br>
+              As the warning states, it cannot be changed later.<br>
+              Make sure you provide accurate information, as not doing so can and likely will result in legal headaches later.<br>
+              As previously stated, this guide is provided <b>as-is</b>, without any warranties.<br>
+            </p>
+
+            <p>
+              Payment information will be required.<br>
+              There will be a temporary charge.<br>
+              Make sure you use an internationally accepted card (Visa, Mastercard or AMEX) with international purchaces enabled.<br>
+              Click "start my free trial" to finish up.<br>
+              Wait for a few moments as the account is set up.<br>
+            </p>
+
+            <p>
+              Sign into your created account.<br>
+              Note: your password manager may not haved saved your details correctly.<br>
+              Head into the list and retrieve your password, then sign in once manually.<br>
+              Setting up Passkeys, Mobile app auth, or another 2fa method is highly recommended.<br>
+            </p>
+
+
+            <h3>Deploying an A1 instance</h3>
+
+            <p>
+              Log into your account, and head to the "get started" tab. You should be there by default.<br>
+              Scroll down to "launch instances", and click "create a VM instance".<br>
+              Things should be set to an appropriate setting by default.<br>
+              If not mentioned in this guide, you shouldn't need to touch it.<br>
+              You may experiment, of course!
+            </p>
+
+            <p>
+              Scroll down to find "image and shape".<br>
+              Select "edit" to expand the section and start editing.<br>
+              Select "change shape".<br>
+              Select "Ampere".<br>
+              Check the box next to "VM.Standard.A1.Flex".<br>
+              Select the CPUs and RAM capacity as you please.<br>
+              Don't worry, you can modify this later!<br>
+              Click "select shape" to save and dismiss.<br>
+              Make sure it says "Always Free-eligible".
+            </p>
+
+            <p>
+              You'll have to assign a public IP address.<br>
+              <b>Doing so will open access to this server via the web.</b><br>
+              Please stay vigillant and secure your server.<br>
+              Scroll down to find "Primary VNIC information". Click edit.<br>
+              You'll likely have to create a new virtual cloud network.<br>
+              Leave the option as-is, it'll likely have already selected to create a public IPv4 address.<br>
+              You can change this later.<br>
+            </p>
+
+            <p>
+              Next, we'll have to set up SSH.<br>
+              Already know how it works? Upload your key files.<br>
+              Else, leave it as is, and <b>download both key files.</b><br>
+              <b>THe private key, especially, will not be shown later.</b><br>
+              You <i>cannot</i> access the VM without this.<br>
+            </p>
+
+            <p>
+              You should be able to leave storage defaults.<br>
+              Click create, and Oracle will create a VM for you.<br>
+              If it errors out, try modifying your availability domain.<br>
+              If even that doesn't work, you'll have to wait a bit.<br>
+            </p>
+
+            <h3>Preparing and deploying the minecraft server</h3>
+
+
+
+        </body>
+    </html>
