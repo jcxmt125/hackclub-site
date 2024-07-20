@@ -146,7 +146,70 @@
 
             <h3>Preparing and deploying the minecraft server</h3>
 
+            <p>
+              Have a server now? Great! We'll have to connect via SSH.<br>
+              You'll want to take note of the "Public IPv4 address".<br>
+              Type ssh opc@[IP address] -i [path to the downloaded private key file] into your terminal.<br>
+              Type "yes" to trust the key.<br>
+              You should be connected, and be ready to run commands now.<br>
+            </p>
 
+            <p>
+              Let's download the assistant script.<br>
+              First, cd into your desired directory.<br>
+              Paste and run the following command into your terminal:<br>
+              curl -OJ https://raw.githubusercontent.com/jcxmt125/side-projects/main/python%20scripts/mc-serverdeploy.py<br>
+              We'll now have to install Java.<br>
+              Run yum list jdk* on the server. (This may take a bit!)<br>
+              Read the output, and install the latest JDK. It should look something like this:<br>
+              jdk-[version-number]-... (You may go ahead and choose headless if it presents the option.)<br>
+              Run sudo yum install [name of package].<br>
+              If it asks if this is okay, say y(es).<br>
+              Run the install script.<br>
+            </p>
+
+            <p>
+              You should be ready to run the server.<br>
+              Note the command the script gave you, and come back to your desktop.<br>
+              Don't exit the SSH session just yet.<br>
+            </p>
+
+            <h3>Network setup</h3>
+
+            <p>
+              Now it's time to make your server actually connectable.<br>
+              On the dashboard of your running cloud server, click the subnet link.<br>
+              By default, it should look like subnet-[date]-[time].<br>
+              Click on "Default Security list for..."<br>
+              Click the "Add ingress rules" button.<br>
+              Set Source CIDR to 0.0.0.0/0, and Destination Port range to 25565.<br>
+              Click "Add ingress rules".<br>
+            </p>
+
+            <p>
+              Go back to the SSH session.<br>
+              Run these commands in your terminal:<br>
+              sudo firewall-cmd --permanent --zone=public --add-port=25565/tcp<br>
+              sudo firewall-cmd --permanent --zone=public --add-port=25565/udp<br>
+              sudo firewall-cmd --reload<br>
+            </p>
+
+            <p>
+              You can optionally connect your server to a domain.<br>
+              Add an A record for the public IP address.<br>
+              If you're using Cloudflare: Make sure you turn proxying off.<br>
+            </p>
+
+            <h3>Start and connect to the server</h3>
+
+            <p>
+              Run the provided command.<br>
+              You server should start up!<br>
+              In your Minecraft client, add the server.<br>
+              In multiplayer, "add server".<br>
+              Input the IP address, or your configured domain.<br>
+              You should be able to connect now!
+            </p>
 
         </body>
     </html>
