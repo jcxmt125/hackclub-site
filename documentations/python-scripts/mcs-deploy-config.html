@@ -28,7 +28,7 @@
 
             <p>
               <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/mcs-deploy-config.py">Deploy script</a><br>
-              <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/mcs-oraclefree-wrapper.py">Deploy script wrapper for Oracel Free tier servers</a><br>
+              <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/mcs-oraclefree-wrapper.py">Deploy script wrapper for Oracle Free tier servers</a><br>
               <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/mcs-update-mods.py">Mods update script</a><br>
             </p>
 
@@ -45,137 +45,61 @@
               <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/example-config.json">Example config file</a><br>
             </p>
 
-            <h2>Environment configuration</h2>
+            <h2>Preparing your config file</h2>
 
             <p>
-              This script does not require additional modules.<br>
+              This program will help you install a minecraft server to a linux server.<br>
+              First, we'll create the config file.<br>
+              Execute the Full config generation script (mcs-make-config) file on your desktop machine.<br>
+              Answer the questions to get a json config file.<br>
+            </p>
+
+            <h2>Deploying the server</h2>
+
+            <p>
+              We'll want to download the necessary files to your server.<br>
+              First, cd into the directory you want your server installed to.<br>
+              Download the server script with the following command:<br>
+              curl -OJ https://raw.githubusercontent.com/jcxmt125/side-projects/main/python%20scripts/mcs-deploy-config/mcs-deploy-config.py<br>
+              Then transfer your config file with scp or similar.<br>
             </p>
 
             <p>
-              This script does not require a .env file.<br>
-            </p>
-
-            <h2>Deploying to a server</h2>
-
-            <p>
-              This program will install a minecraft server to a linux server.<br>
-              First, move the python file to the directory you'd like to install to.<br>
-              Execute the Python file. It'll ask you some questions.<br>
+              Execute the script on your server. It won't need additional modules.<br>
               Follow the instructions, and a minecraft server will be installed on your current directory.<br>
               Note the command displayed on screen, as it'll allow you to run the server.<br>
+              As instructed, you may also use ./start.sh instead.<br>
               You may delete the Python script, as it isn't needed anymore.<br>
             </p>
 
-            <h2>More involved instructions: Deploying to Oracle Free tier</h2>
+            <h2>Specifically, deploying to Oracle Free tier</h2>
 
             <p>
-              Guide based on <a style="color: #effab6;" href="https://blogs.oracle.com/developers/post/how-to-set-up-and-run-a-really-powerful-free-minecraft-server-in-the-cloud">this</a> official blogpost by Oracle.<br>
-              Quick note: I'm using Oracle since they have the most generous free tier.<br>
-              This may change at any time.<br>
-              I'm not responsible for any economical damages that occur due to following this guide.<br>
-            </p>
-
-            <h3>Sign up to OCS</h3>
-
-            <p>
-              Head to the <a style="color: #effab6;" href="https://www.oracle.com/cloud/free/">free tier explanation website</a> and read though <i>carefully</i>.<br>
-              Make sure you understand what's free and what isn't.<br>
-              We're looking for "Arm compute instance" of the Always free category.<br>
-              Click "start for free", and begin signing up.<br>
-            </p>
-
-            <p>
-              You'll need to provide personal information.<br>
-              <b>Read through the terms you agree to carefully.</b><br>
-              <b>Read through all appropriate warnings. Pay special attention to warnings related to A1 compute instances, as they are what we will be using.</b><br>
-              When the author was signing up, there were availability warnings for instances on the Seoul region.<br>
-              Make sure to use your own judgement when choosing your home region.<br>
-              As the warning states, it cannot be changed later.<br>
-              Make sure you provide accurate information, as not doing so can and likely will result in legal headaches later.<br>
-              As previously stated, this guide is provided <b>as-is</b>, without any warranties.<br>
-            </p>
-
-            <p>
-              Payment information will be required.<br>
-              There will be a temporary charge.<br>
-              Make sure you use an internationally accepted card (Visa, Mastercard or AMEX) with international purchaces enabled.<br>
-              Click "start my free trial" to finish up.<br>
-              Wait for a few moments as the account is set up.<br>
-            </p>
-
-            <p>
-              Sign into your created account.<br>
-              Note: your password manager may not haved saved your details correctly.<br>
-              Head into the list and retrieve your password, then sign in once manually.<br>
-              Setting up Passkeys, Mobile app auth, or another 2fa method is highly recommended.<br>
-            </p>
-
-
-            <h3>Deploying an A1 instance</h3>
-
-            <p>
-              Log into your account, and head to the "get started" tab. You should be there by default.<br>
-              Scroll down to "launch resources", and click "create a VM instance".<br>
-              Things should be set to an appropriate setting by default.<br>
-              If not mentioned in this guide, you shouldn't need to touch it.<br>
-              You may experiment, of course!
-            </p>
-
-            <p>
-              Scroll down to find "image and shape".<br>
-              Select "edit" to expand the section and start editing.<br>
-              Select "change shape".<br>
-              Select "Ampere".<br>
-              Check the box next to "VM.Standard.A1.Flex".<br>
-              Select the CPUs and RAM capacity as you please. You can get up to 4 OCPUs and 24 GBs of RAM for free..<br>
-              Don't worry, you can modify this later!<br>
-              Click "select shape" to save and dismiss.<br>
-              Make sure it says "Always Free-eligible".
-            </p>
-
-            <p>
-              Next, we'll have to set up SSH.<br>
-              Already know how it works? Upload your key files.<br>
-              Else, leave it as is, and <b>download both key files.</b><br>
-              <b>The private key, especially, will not be shown later.</b><br>
-              You <i>cannot</i> access the VM without this.<br>
-            </p>
-
-            <p>
-              You should be able to leave storage defaults.<br>
-              Click create, and Oracle will create a VM for you.<br>
-              If it errors out, try modifying your availability domain.<br>
-              If even that doesn't work, you'll have to wait a bit.<br>
+              For deploying entirely from scratch (without a set up Oracle account or server), see <a style="color: #b6defa;" href="mc-createserver.html">here</a>.<br>
+              For following this guide, just connect to SSH, then download the above script.<br>
             </p>
 
             <h3>Preparing and deploying the minecraft server</h3>
 
             <p>
-              Have a server now? Great! We'll have to connect via SSH.<br>
-              You'll want to take note of the "Public IPv4 address".<br>
-              Type ssh opc@[IP address] -i [path to the downloaded private key file] into your terminal.<br>
-              Type "yes" to trust the key.<br>
-              You should be connected, and be ready to run commands now.<br>
+              After downloading the main script, execute the following command:<br>
+              curl -OJ https://raw.githubusercontent.com/jcxmt125/side-projects/main/python%20scripts/mcs-deploy-config/mcs-oraclefree-wrapper.py<br>
+              Don't forget to also transfer your config file.<br>
             </p>
 
             <p>
-              Let's download the assistant script.<br>
-              First, cd into your desired directory.<br>
-              Paste and run the following command into your terminal:<br>
-              curl -OJ https://raw.githubusercontent.com/jcxmt125/side-projects/main/python%20scripts/mc-serverdeploy.py<br>
-              We'll now have to install Java.<br>
-              Run yum list jdk* on the server. (This may take a bit!)<br>
-              Read the output, and install the latest JDK. It should look something like this:<br>
-              jdk-[version-number]-... (You may go ahead and choose headless if it presents the option.)<br>
-              Run sudo yum install [name of package].<br>
-              If it asks if this is okay, say y(es).<br>
-              You may run the Python script now.<br>
+              Execute the "wrapper" Python script.<br>
+              On the output, copy the latest headless version of Java.<br>
+              For me, it looked like "jdk-22-headless.aarch64".<br>
+              Paste it in, and when prompted, type "y" then return to allow yum to install Java.<br>
+              Input the name of your config file, and press return.<br>
+              When prompted, return to launch nano and agree to EULA.<br>
+              Wait a few moments, and your server will be ready to go!<br>
             </p>
 
             <p>
-              You should be ready to run the server.<br>
-              Note the command the script gave you, and come back to your desktop.<br>
-              Don't exit the SSH session just yet.<br>
+              Come back to your desktop.<br>
+              Don't exit the SSH session just yet, the server isn't running yet!<br>
             </p>
 
             <h3>Network setup</h3>
@@ -191,14 +115,6 @@
             </p>
 
             <p>
-              Go back to the SSH session.<br>
-              Run these commands in your terminal:<br>
-              sudo firewall-cmd --permanent --zone=public --add-port=25565/tcp<br>
-              sudo firewall-cmd --permanent --zone=public --add-port=25565/udp<br>
-              sudo firewall-cmd --reload<br>
-            </p>
-
-            <p>
               You can optionally connect your server to a domain.<br>
               Add an A record for the public IP address.<br>
               If you're using Cloudflare: Make sure you turn proxying off.<br>
@@ -208,8 +124,9 @@
 
             <p>
               Run the provided command.<br>
+              Either paste it in directly, or do source start.sh<br>
               It is recommended to do this in, for example, a "screen" or tmux, so as not to lose your connection.<br>
-              You server should start up!<br>
+              Your server should start up!<br>
               In your Minecraft client, add the server.<br>
               In multiplayer, "add server".<br>
               Input the IP address, or your configured domain.<br>
