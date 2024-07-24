@@ -46,6 +46,26 @@
               <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/example-config.json">Example config file</a><br>
             </p>
 
+            <h2>Now with "quick" install!</h2>
+
+            <p>
+              This will install a lightly modded (vanilla-connectible with optimization mods and some QoL mod compatilibilty) 1.21 fabric minecraft server.<br>
+              The server will be installed on your current directory.<br>
+              If you need to customize more settings, please read below.<br>
+              Else, let's get started!
+            </p>
+
+            <p>
+              You should have Python installed. If not, please install it first...<br>
+              For Oracle aarch (ARM) servers, run: curl -fsSL https://hackclub.jclink.link/links/mcs-tl-u | bash
+              For Ubuntu x86 servers, run: curl -fsSL https://hackclub.jclink.link/links/mcs-tl-o-a | bash
+            </p>
+            
+            <p>
+              To launch your server, open screen or tmux, and source start.sh<br>
+              Make sure you change the external firewall to allow port 25565.
+            </p>
+
             <h2>Preparing your config file</h2>
 
             <p>
@@ -179,7 +199,7 @@
               cd into the server directory, then download the upgrade assistant script with the following:<br>
               curl -OJ https://raw.githubusercontent.com/jcxmt125/side-projects/main/python%20scripts/mcs-deploy-config/mcs-make-config.py<br>
               After you verify the script and the config file is ready, stop the minecraft server.<br>
-              Execute the scrip, provide the config file (It may also be a 'full' config file), and it should be done fairly quickly.<br>
+              Execute the script, provide the config file (It may also be a 'full' config file), and it should be done fairly quickly.<br>
               Start the minecraft server.<br>
             </p>
 
