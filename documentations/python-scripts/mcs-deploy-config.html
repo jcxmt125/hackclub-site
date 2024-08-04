@@ -10,15 +10,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300&display=swap" rel="stylesheet">
-        <style>
-          body {
-            font-family: 'IBM Plex Sans KR', sans-serif;;
-            padding: 10px;
-            line-height: 200%;
-          }
-        </style>
+        <link href="/style.css" rel="stylesheet">
         </head>
-        <body style="background-color:#202020;color:#F0F0F0">
+        <body>
 
             <h1>Documentation for mcs-deploy-config</h1>
 
@@ -27,25 +21,25 @@
             <h3>Server-side</h3>
 
             <p>
-              <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/mcs-deploy-config.py">Deploy script</a><br>
-              <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/mcs-oraclefree-wrapper.py">Deploy script wrapper for Oracle linux servers</a><br>
-              <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/mcs-ubuntu-wrapper.py">Deploy script wrapper for Ubuntu servers</a><br>
-              <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/mcs-update-mods.py">Mods update script</a><br>
+              <a class="extLink" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/mcs-deploy-config.py">Deploy script</a><br>
+              <a class="extLink" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/mcs-oraclefree-wrapper.py">Deploy script wrapper for Oracle linux servers</a><br>
+              <a class="extLink" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/mcs-ubuntu-wrapper.py">Deploy script wrapper for Ubuntu servers</a><br>
+              <a class="extLink" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/mcs-update-mods.py">Mods update script</a><br>
             </p>
 
             <h3>Desktop-side</h3>
 
             <p>
-              <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/mcs-make-config.py">Full config generation script</a><br>
-              <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/mcs-make-updateconfig.py">Update config generation script</a><br>
-              <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/mcs-deploy-mods-client.py">Deploy config for client</a><br>
+              <a class="extLink" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/mcs-make-config.py">Full config generation script</a><br>
+              <a class="extLink" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/mcs-make-updateconfig.py">Update config generation script</a><br>
+              <a class="extLink" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/mcs-deploy-mods-client.py">Deploy config for client</a><br>
             </p>
 
             <h3>Other</h3>
 
             <p>
-              <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/example-config.json">Example config file</a><br>
-              <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/tree/main/python%20scripts/mcs-deploy-config/touchless">Quick Setup</a>
+              <a class="extLink" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/example-config.json">Example config file</a><br>
+              <a class="extLink" href="https://github.com/jcxmt125/side-projects/tree/main/python%20scripts/mcs-deploy-config/touchless">Quick Setup</a>
             </p>
 
             <h2>Now with "quick" install!</h2>
@@ -104,7 +98,7 @@
             <h2>Deploying to Oracle linux</h2>
 
             <p>
-              For deploying entirely from scratch (without a set up Oracle account or server), see <a style="color: #b6defa;" href="mc-createserver.html">here</a>.<br>
+              For deploying entirely from scratch (without a set up Oracle account or server), see <a class="intLink" href="mc-createserver.html">here</a>.<br>
               For following this guide, just connect to SSH, then download the above script.<br>
             </p>
 
@@ -216,8 +210,8 @@
               Installed mods on your server, but still need to do it on your own PC?<br>
               There's another script that can help!<br>
               First, install fabric on your Minecraft installation.<br>
-              See <a style="color: #effab6;" href="https://fabricmc.net/use/installer/">fabricmc.net</a> for more information on that.<br>
-              Then download the <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/mcs-deploy-mods-client.py">Client configuration deploy</a> script.<br>
+              See <a class="extLink" href="https://fabricmc.net/use/installer/">fabricmc.net</a> for more information on that.<br>
+              Then download the <a class="extLink" href="https://github.com/jcxmt125/side-projects/blob/main/python%20scripts/mcs-deploy-config/mcs-deploy-mods-client.py">Client configuration deploy</a> script.<br>
               Prepare your configuration script too. This script is compatible with the same format as the server side mod update script.<br>
             </p>
 

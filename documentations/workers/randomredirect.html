@@ -10,32 +10,22 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300&display=swap" rel="stylesheet">
-        <style>
-          body {
-            font-family: 'IBM Plex Sans KR', sans-serif;;
-            padding: 10px;
-            line-height: 200%;
-          }
-          img {  
-            max-width: 100%;
-            height: auto;
-          }
-        </style>
+        <link href="/style.css" rel="stylesheet">
         </head>
-        <body style="background-color:#202020;color:#F0F0F0">
+        <body>
 
             <h1>Documentation for random redirect worker</h1>
 
             <h2>Source code</h2>
 
             <p>
-              <a style="color: #effab6;" href="https://github.com/jcxmt125/side-projects/blob/main/workers/randomredirect-worker.js">Main worker script</a><br>
+              <a class="extLink" href="https://github.com/jcxmt125/side-projects/blob/main/workers/randomredirect-worker.js">Main worker script</a><br>
             </p>
 
             <h2>Deploy instructions</h2>
 
             <p>
-              First, create a <a style="color: #effab6;" href="https://dash.cloudflare.com/">cloudflare account.</a><br>
+              First, create a <a class="extLink" href="https://dash.cloudflare.com/">cloudflare account.</a><br>
               Go to the workers/pages menu on your dashboard.<br>
               <picture>
                 <source srcset="/resources/documentations/cfworkers/cf-dashboard.avif" type="image/avif">
@@ -74,7 +64,7 @@
               You may copy and paste the appropriate section of code to add more paths.<br>
               Deploy your worker, then visit its URL to test it out.<br>
               For easier usage, go to settings, then triggers, and configure custom URLs or paths.<br>
-              For wrangler (CLI) deploy, see <a style="color: #effab6;" href="https://developers.cloudflare.com/workers">cloudflare's documentation</a>.
+              For wrangler (CLI) deploy, see <a class="extLink" href="https://developers.cloudflare.com/workers">cloudflare's documentation</a>.
             </p>
 
             <h2>Usage instructions</h2>
