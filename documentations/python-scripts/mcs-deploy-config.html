@@ -53,8 +53,8 @@
 
             <p>
               You should have Python installed. If not, please install it first...<br>
-              For Oracle aarch (ARM) servers with 10+gbs of RAM (Half of the free capacity), run: curl -fsSL https://hackclub.jclink.link/links/mcs-tl-o-a | bash<br>
-              For Ubuntu x86 servers, run: curl -fsSL https://hackclub.jclink.link/links/mcs-tl-u | bash<br>
+              For Oracle aarch (ARM) servers with 10+gbs of RAM (Half of the free capacity), run: <span class="srccode">curl -fsSL https://hackclub.jclink.link/links/mcs-tl-o-a | bash</span><br>
+              For Ubuntu x86 servers, run: <span class="srccode">curl -fsSL https://hackclub.jclink.link/links/mcs-tl-u | bash</span><br>
             </p>
             
             <p>
@@ -82,7 +82,7 @@
               We'll want to download the necessary files to your server.<br>
               First, cd into the directory you want your server installed to.<br>
               Download the server script with the following command:<br>
-              curl -OJ https://raw.githubusercontent.com/jcxmt125/side-projects/main/python%20scripts/mcs-deploy-config/mcs-deploy-config.py<br>
+              <span class="srccode">curl -OJ https://raw.githubusercontent.com/jcxmt125/side-projects/main/python%20scripts/mcs-deploy-config/mcs-deploy-config.py</span><br>
               Then transfer your config file to the same directory with scp or similar.<br>
               You'll also want to install Java (JRE).<br>
             </p>
@@ -106,14 +106,14 @@
 
             <p>
               After downloading the main script, execute the following command:<br>
-              curl -OJ https://raw.githubusercontent.com/jcxmt125/side-projects/main/python%20scripts/mcs-deploy-config/mcs-oraclefree-wrapper.py<br>
+              <span class="srccode">curl -OJ https://raw.githubusercontent.com/jcxmt125/side-projects/main/python%20scripts/mcs-deploy-config/mcs-oraclefree-wrapper.py</span><br>
               Don't forget to also transfer your config file.<br>
             </p>
 
             <p>
               Execute the "wrapper" Python script.<br>
               On the output, copy the latest headless version of Java.<br>
-              For me, it looked like "jdk-22-headless.aarch64".<br>
+              For me, it looked like <span class="srccode">"jdk-22-headless.aarch64"</span>.<br>
               Paste it in, and when prompted, type "y" then return to allow yum to install Java.<br>
               Input the name of your config file, and press return.<br>
               When prompted, return to launch nano and agree to EULA.<br>
@@ -130,18 +130,18 @@
             <p>
               Now it's time to make your server actually connectable.<br>
               On the dashboard of your running cloud server, click the subnet link.<br>
-              By default, it should look like subnet-[date]-[time].<br>
-              Click on "Default Security list for..."<br>
-              Click the "Add ingress rules" button.<br>
-              Set Source CIDR to 0.0.0.0/0, and Destination Port range to 25565.<br>
-              Click "Add ingress rules".<br>
+              By default, it should look like <span class="srccode">subnet-[date]-[time]</span>.<br>
+              Click on <span class="srccode">"Default Security list for..."</span><br>
+              Click the <span class="srccode">"Add ingress rules" button.</span><br>
+              Set Source CIDR to <span class="srccode">0.0.0.0/0</span>, and Destination Port range to <span class="srccode">25565</span>.<br>
+              Click <span class="srccode">"Add ingress rules"</span>.<br>
             </p>
 
             <h2>Deploying to an Ubuntu server</h2>
 
             <p>
               After downloading the main script, execute the following command:<br>
-              curl -OJ https://raw.githubusercontent.com/jcxmt125/side-projects/main/python%20scripts/mcs-deploy-config/mcs-ubuntu-wrapper.py<br>
+              <span class="srccode">curl -OJ https://raw.githubusercontent.com/jcxmt125/side-projects/main/python%20scripts/mcs-deploy-config/mcs-ubuntu-wrapper.py</span><br>
               Don't forget to also transfer your config file.<br>
             </p>
 
@@ -149,7 +149,7 @@
               Execute the "wrapper" Python script.<br>
               It will apt update for you, then ask if you'd like to apt upgrade.<br>
               Then, it'll search for available jre binaries.<br>
-              Select the latest openjdk headless, for me "openjdk-21-jre-headless".<br>
+              Select the latest openjdk headless, for me <span class="srccode">"openjdk-21-jre-headless"</span>.<br>
               Paste it in, and when prompted, type "y" then return to allow apt to install Java.<br>
               Input the name of your config file, and press return.<br>
               When prompted, return to launch nano and agree to EULA.<br>
@@ -198,7 +198,7 @@
             <p>
               On your server, open another tmux or screen session.<br>
               cd into the server directory, then download the upgrade assistant script with the following:<br>
-              curl -OJ https://raw.githubusercontent.com/jcxmt125/side-projects/main/python%20scripts/mcs-deploy-config/mcs-update-mods.py<br>
+              </span><span class="srccode">curl -OJ https://raw.githubusercontent.com/jcxmt125/side-projects/main/python%20scripts/mcs-deploy-config/mcs-update-mods.py</span><br>
               After you verify the script and the config file is ready, stop the minecraft server.<br>
               Execute the script, provide the config file (It may also be a 'full' config file), and it should be done fairly quickly.<br>
               Start the minecraft server.<br>
