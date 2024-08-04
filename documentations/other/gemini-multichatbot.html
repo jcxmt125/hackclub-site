@@ -35,30 +35,30 @@
                 This project requires a .env file:<br>
                 Cloudflare related:
                 <ul>
-                    <li>CLOUDFLARE_AI_API_KEY: an API key with access to Cloudflare's Workers AI.</li>
-                    <li>CLOUDFLARE_AI_GATEWAY_SLUG: the slug you set for Cloudflare's AI gateway.</li>
-                    <li>CLOUDFLARE_USER_ID: Your Cloudflare user ID: the string of letters and numbers after "dash.cloudflare.com" when logged in.</li>
-                    <li>CLOUDFLARE_RADAR_API_KEY: an API key with access to Cloudflare radar.</li>
+                    <li><span class="srccode">CLOUDFLARE_AI_API_KEY</span>: an API key with access to Cloudflare's Workers AI.</li>
+                    <li><span class="srccode">CLOUDFLARE_AI_GATEWAY_SLUG</span>: the slug you set for Cloudflare's AI gateway.</li>
+                    <li><span class="srccode">CLOUDFLARE_USER_ID</span>: Your Cloudflare user ID: the string of letters and numbers after "dash.cloudflare.com" when logged in.</li>
+                    <li><span class="srccode">CLOUDFLARE_RADAR_API_KEY</span>: an API key with access to Cloudflare radar.</li>
                 </ul>
                 Storage related:
                 <ul>
-                    <li>S3COMPAT_ENDPOINT_URL: The endpoint for the S3 API</li>
-                    <li>S3KEYID: Your S3 key ID</li>
-                    <li>S3SECRET: Your S3 secret</li>
-                    <li>S3_BUCKET_PUBLIC_URL: The public URL of your S3 bucket (will be displayed to users)</li>
-                    <li>S3_BUCKET_NAME: The name of your S3 bucket</li>
+                    <li><span class="srccode">S3COMPAT_ENDPOINT_URL</span>: The endpoint for the S3 API</li>
+                    <li><span class="srccode">S3KEYID</span>: Your S3 key ID</li>
+                    <li><span class="srccode">S3SECRET</span>: Your S3 secret</li>
+                    <li><span class="srccode">S3_BUCKET_PUBLIC_URL</span>: The public URL of your S3 bucket (will be displayed to users)</li>
+                    <li><span class="srccode">S3_BUCKET_NAME</span>: The name of your S3 bucket</li>
                 </ul>
                 Other:
                 <ul>
-                    <li>GEMINI_API_KEY: get one from Google's AI studio. Most LLM requests will use this.</li>
+                    <li><span class="srccode">GEMINI_API_KEY</span>: get one from Google's AI studio. Most LLM requests will use this.</li>
                 </ul>
             </p>
 
             <p>
                 You need to install more programs not covered by Python dependancies:<br>
                 <ul>
-                    <li>ImageMagick: Install it, and test that you can access it either via "magick" or "convert".</li>
-                    <li>ffmpeg: Install it, and test you can access it on the cli.</li>
+                    <li><span class="srccode">ImageMagick</span>: Install it, and test that you can access it either via <span class="srccode">magick</span> or <span class="srccode">convert</span>.</li>
+                    <li><span class="srccode">ffmpeg</span>: Install it, and test you can access it on the cli.</li>]
                 </ul>
                 Both need to be on your PATH.
             </p>

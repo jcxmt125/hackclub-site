@@ -27,7 +27,7 @@
             <p>
                 First, git clone the repo.<br>
                 Although you could download the repo as a zip instead, cloning will allow faster updates later.<br>
-                This bot requires additional modules: install them with "pip install -r requirements.txt".<br>
+                This bot requires additional modules: install them with <span class="srccode">pip install -r requirements.txt</span>.<br>
                 It is recommended to do this in a venv.<br>
             </p>
 
@@ -35,31 +35,31 @@
                 This script requires a .env file:<br>
                 Cloudflare related:
                 <ul>
-                    <li>CLOUDFLARE_AI_API_KEY: an API key with access to Cloudflare's Workers AI.</li>
-                    <li>CLOUDFLARE_AI_GATEWAY_SLUG: the slug you set for Cloudflare's AI gateway.</li>
-                    <li>CLOUDFLARE_USER_ID: Your Cloudflare user ID: the string of letters and numbers after "dash.cloudflare.com" when logged in.</li>
-                    <li>CLOUDFLARE_RADAR_API_KEY: an API key with access to Cloudflare radar.</li>
+                    <li><span class="srccode">CLOUDFLARE_AI_API_KEY</span>: an API key with access to Cloudflare's Workers AI.</li>
+                    <li><span class="srccode">CLOUDFLARE_AI_GATEWAY_SLUG</span>: the slug you set for Cloudflare's AI gateway.</li>
+                    <li><span class="srccode">CLOUDFLARE_USER_ID</span>: Your Cloudflare user ID: the string of letters and numbers after "dash.cloudflare.com" when logged in.</li>
+                    <li><span class="srccode">CLOUDFLARE_RADAR_API_KEY</span>: an API key with access to Cloudflare radar.</li>
                 </ul>
                 Storage related:
                 <ul>
-                    <li>S3COMPAT_ENDPOINT_URL: The endpoint for the S3 API</li>
-                    <li>S3KEYID: Your S3 key ID</li>
-                    <li>S3SECRET: Your S3 secret</li>
-                    <li>S3_BUCKET_PUBLIC_URL: The public URL of your S3 bucket (will be displayed to users)</li>
-                    <li>S3_BUCKET_NAME: The name of your S3 bucket</li>
+                    <li><span class="srccode">S3COMPAT_ENDPOINT_URL</span>: The endpoint for the S3 API</li>
+                    <li><span class="srccode">S3KEYID</span>: Your S3 key ID</li>
+                    <li><span class="srccode">S3SECRET</span>: Your S3 secret</li>
+                    <li><span class="srccode">S3_BUCKET_PUBLIC_URL</span>: The public URL of your S3 bucket (will be displayed to users)</li>
+                    <li><span class="srccode">S3_BUCKET_NAME</span>: The name of your S3 bucket</li>
                 </ul>
                 Other:
                 <ul>
-                    <li>GEMINI_API_KEY: get one from Google's AI studio. Most LLM requests will use this.</li>
-                    <li>DISCORD_BOT_TOKEN: get one from Discord developer portal.</li>
+                    <li><span class="srccode">GEMINI_API_KEY</span>: get one from Google's AI studio. Most LLM requests will use this.</li>
+                    <li><span class="srccode">DISCORD_BOT_TOKEN</span>: get one from Discord developer portal.</li>
                 </ul>
             </p>
 
             <p>
                 You need to install more programs not covered by Python dependancies:<br>
                 <ul>
-                    <li>ImageMagick: Install it, and test that you can access it either via "magick" or "convert".</li>
-                    <li>ffmpeg: Install it, and test you can access it on the cli.</li>
+                    <li><span class="srccode">ImageMagick</span>: Install it, and test that you can access it either via <span class="srccode">magick</span> or <span class="srccode">convert</span>.</li>
+                    <li><span class="srccode">ffmpeg</span>: Install it, and test you can access it on the cli.</li>
                 </ul>
                 Both need to be on your PATH.
             </p>
@@ -68,14 +68,14 @@
 
             <p>
                 Invite your bot to a server from the provided installation URL on the Discord developer portal.<br>
-                Run "bot_botmode_autoread.py". You must keep this running for the bot to work.<br>
+                Run <span class="srccode">bot_botmode_autoread.py</span>. You must keep this running for the bot to work.<br>
                 On linux CLI, usage of tools such as "screen" is recommended.<br>
                 On first run, a directory will be created to store configurations.<br>
                 Check that the bot appears "online".
             </p>
 
             <p>
-                Run the "$initialize" command on a channel.<br>
+                Run the <span class="srccode">$initialize</span> command on a channel.<br>
                 This will be considered your "main" channel.<br>
                 You may at any time run this command elsewhere to change it.<br>
             </p>
@@ -91,35 +91,35 @@
             </p>
 
             <p>
-                To update the bot, run git pull in the directory of the bot.py file.<br>
-                Updating may change dependancies. Run pip install -r requirements.txt again.<br>
+                To update the bot, run <span class="srccode">git pull</span> in the directory of the bot.py file.<br>
+                Updating may change dependancies. Run <span class="srccode">pip install -r requirements.txt</span> again.<br>
             </p>
 
             <h3>Configuration</h3>
 
             <p>
-                $enable or $disable features to your liking.<br>
-                You may use all/AI/proactive in place of individual names.
+                Run <span class="srccode">$enable</span> or <span class="srccode">$disable</span> features to your liking.<br>
+                You may use <span class="srccode">all/AI/proactive</span> in place of individual names.<br>
             </p>
 
             <p>
                 For hardcoded features (proactive):<br>
                 <ul>
-                    <li>HelpEverywhere: This will allow the bot to respond with hardcoded responses anywhere. (If off: only in the main channel)</li>
-                    <li>ImageConversion: The bot will auto-convert heic and avif files to webp.</li>
-                    <li>AudioConversion: The bot will auto-convert opus files to mp3.</li>
-                    <li>TextPublish: The bot will automatically publish a txt file as a webpage.</li>
-                    <li>APNGConversion: The bot will auto convert apng files to webm.</li>
+                    <li><span class="srccode">HelpEverywhere</span>: This will allow the bot to respond with hardcoded responses anywhere. (If off: only in the <span class="srccode">main</span> channel)</li>
+                    <li><span class="srccode">ImageConversion</span>: The bot will auto-convert <span class="srccode">heic</span> and <span class="srccode">avif</span> files to <span class="srccode">webp</span>.</li>
+                    <li><span class="srccode">AudioConversion</span>: The bot will auto-convert <span class="srccode">opus</span> files to <span class="srccode">mp3</span>.</li>
+                    <li><span class="srccode">TextPublish</span>: The bot will automatically publish a <span class="srccode">txt</span> file as a webpage.</li>
+                    <li><span class="srccode">APNGConversion</span>: The bot will auto convert <span class="srccode">apng</span> files to <span class="srccode">webm</span>.</li>
                 </ul>
                 <br>
                 For AI-enabled features (AI):<br>
                 <ul>
-                    <li>AIEnabled: Enables AI scanning in the main channel. (If off: all of the below features won't work)</li>
-                    <li>AIWebScan: scans URLs for safety with Cloudflare radar.</li>
-                    <li>AIMediaLoad: downloads audio tracks from youtube.</li>
-                    <li>AIResponse: AI responds to factual questions.</li>
-                    <li>AIImagen: Generates images with Stable Diffusion.</li>
-                    <li>AIAudioTrancscribe: Transcribes audio when prompted</li>
+                    <li><span class="srccode">AIEnabled</span>: Enables AI scanning in the main channel. (If off: all of the below features won't work)</li>
+                    <li><span class="srccode">AIWebScan</span>: scans URLs for safety with Cloudflare radar.</li>
+                    <li><span class="srccode">AIMediaLoad</span>: downloads audio tracks from youtube.</li>
+                    <li><span class="srccode">AIResponse</span>: AI responds to factual questions.</li>
+                    <li><span class="srccode">AIImagen</span>: Generates images with Stable Diffusion.</li>
+                    <li><span class="srccode">AIAudioTranscribe</span>: Transcribes audio when prompted</li>
                 </ul>
                 The "search radius" for all AI-enabled features is 5 messages.
             </p>
@@ -129,7 +129,7 @@
             <p>
                 When AI features are enabled, the bot looks for any new message on the main channel, and sends it to Google's Gemini API for analysis.<br>
                 On free tier, Google may use this collected data to improve its models.<br>
-                Do not set the main channel to #general or similar.<br>
+                Do not set the main channel to <span class="srccode">#general</span> or similar.<br>
             </p>
 
             <p>
@@ -144,7 +144,7 @@
             <h2>Fallbacks</h2>
 
             <p>
-                The bot will fall back to Cloudflare AI's Llama 3 model if Gemini API fails.<br>
+                The bot will fall back to Cloudflare AI's Llama 3.1 model if Gemini API fails.<br>
                 This may be due to a rate limit, or because something else happened.<br>
                 You may notice degraded response performance (both speed and quality) when this happens.<br>
             </p>

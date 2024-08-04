@@ -27,24 +27,23 @@
             <p>
               This script requires the following modules:
               <ul>
-                <li><i>b2sdk</i>:If using Backblaze specific scripts</li>
-                <li>boto3: If using any other S3 compatible providers</li>
-                <li>python-dotenv</li>
-                <li>requests</li>
+                <li><span class="srccode">b2sdk</span>:If using Backblaze specific scripts</li>
+                <li><span class="srccode">boto3</span>: If using any other S3 compatible providers</li>
+                <li><span class="srccode">python-dotenv</span></li>
               </ul>
             </p>
 
             <p>
               This script requires a .env file.
               For Backblaze:
-              <ul>
+              <ul class="srccode">
                 <li>B2_APPLICATION_KEY_ID</li>
                 <li>B2_APPLICATION_KEY</li>
                 <li>B2_BUCKET_NAME</li>
                 <li>B2_FILE_URL_PREFIX</li>
               </ul>
               For generic S3 provider:
-              <ul>
+              <ul class="srccode">
                 <li>S3_COMPAT_ENDPOINT_URL</li>
                 <li>S3_COMPAT_ACCESS_KEY_ID</li>
                 <li>S3_COMPAT_SECRET_ACCESS_KEY</li>
@@ -52,7 +51,7 @@
                 <li>S3_COMPAT_FILE_URL_PREFIX</li>
               </ul>
               For Short.io link shortening:
-              <ul>
+              <ul class="srccode">
                 <li>SHORT_IO_API_KEY</li>
                 <li>SHORT_IO_DOMAIN</li>
               </ul>

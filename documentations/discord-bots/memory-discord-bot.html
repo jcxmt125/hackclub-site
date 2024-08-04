@@ -27,10 +27,10 @@
             <p>
                 First, git clone the repo.<br>
                 Although you could download the repo as a zip instead, cloning will allow faster updates later.<br>
-                This bot requires additional modules: install them with "pip install -r requirements.txt".<br>
+                This bot requires additional modules: install them with <span class="srccode">pip install -r requirements.txt</span>.<br>
                 It is recommended to do this in a venv.<br>
-                If installing on a resource-constrained server, first run "pip install torch --no-cache-dir".<br>
-                You may have to resolve some errors. "sudo apt install libzbar0"<br>
+                If installing on a resource-constrained server, first run <span class="srccode">pip install torch --no-cache-dir</span>.<br>
+                You may have to resolve some errors. <span class="srccode">sudo apt install libzbar0</span><br>
                 See <a class="extLink" href="https://pypi.org/project/qreader/">here</a> for more information about QReader.<br>
             </p>
 
@@ -38,31 +38,31 @@
                 This project requires a .env file:<br>
                 Cloudflare related:
                 <ul>
-                    <li>CLOUDFLARE_AI_API_KEY: an API key with access to Cloudflare's Workers AI.</li>
-                    <li>CLOUDFLARE_AI_GATEWAY_SLUG: the slug you set for Cloudflare's AI gateway.</li>
-                    <li>CLOUDFLARE_USER_ID: Your Cloudflare user ID: the string of letters and numbers after "dash.cloudflare.com" when logged in.</li>
-                    <li>CLOUDFLARE_RADAR_API_KEY: an API key with access to Cloudflare radar.</li>
+                    <li><span class="srccode">CLOUDFLARE_AI_API_KEY</span>: an API key with access to Cloudflare's Workers AI.</li>
+                    <li><span class="srccode">CLOUDFLARE_AI_GATEWAY_SLUG</span>: the slug you set for Cloudflare's AI gateway.</li>
+                    <li><span class="srccode">CLOUDFLARE_USER_ID</span>: Your Cloudflare user ID: the string of letters and numbers after "dash.cloudflare.com" when logged in.</li>
+                    <li><span class="srccode">CLOUDFLARE_RADAR_API_KEY</span>: an API key with access to Cloudflare radar.</li>
                 </ul>
                 Storage related:
                 <ul>
-                    <li>S3COMPAT_ENDPOINT_URL: The endpoint for the S3 API</li>
-                    <li>S3KEYID: Your S3 key ID</li>
-                    <li>S3SECRET: Your S3 secret</li>
-                    <li>S3_BUCKET_PUBLIC_URL: The public URL of your S3 bucket (will be displayed to users)</li>
-                    <li>S3_BUCKET_NAME: The name of your S3 bucket</li>
+                    <li><span class="srccode">S3COMPAT_ENDPOINT_URL</span>: The endpoint for the S3 API</li>
+                    <li><span class="srccode">S3KEYID</span>: Your S3 key ID</li>
+                    <li><span class="srccode">S3SECRET</span>: Your S3 secret</li>
+                    <li><span class="srccode">S3_BUCKET_PUBLIC_URL</span>: The public URL of your S3 bucket (will be displayed to users)</li>
+                    <li><span class="srccode">S3_BUCKET_NAME</span>: The name of your S3 bucket</li>
                 </ul>
                 Other:
                 <ul>
-                    <li>GEMINI_API_KEY: get one from Google's AI studio. Most LLM requests will use this.</li>
-                    <li>DISCORD_BOT_TOKEN: get one from Discord developer portal.</li>
+                    <li><span class="srccode">GEMINI_API_KEY</span>: get one from Google's AI studio. Most LLM requests will use this.</li>
+                    <li><span class="srccode">DISCORD_BOT_TOKEN</span>: get one from Discord developer portal.</li>
                 </ul>
             </p>
 
             <p>
                 You need to install more programs not covered by Python dependancies:<br>
                 <ul>
-                    <li>ImageMagick: Install it, and test that you can access it either via "magick" or "convert".</li>
-                    <li>ffmpeg: Install it, and test you can access it on the CLI.</li>
+                    <li><span class="srccode">ImageMagick</span>: Install it, and test that you can access it either via <span class="srccode">magick</span> or <span class="srccode">convert</span>.</li>
+                    <li><span class="srccode">ffmpeg</span>: Install it, and test you can access it on the CLI.</li>
                 </ul>
                 Both need to be on your PATH.
             </p>
@@ -71,8 +71,8 @@
 
             <p>
                 Invite your bot to a server from the provided installation URL on the Discord developer portal.<br>
-                Create two directories: "ltmemories" and "stmemories".<br>
-                Run "bot.py". You must keep this running for the bot to work.<br>
+                Create two directories: <span class="srccode">ltmemories</span> and <span class="srccode">stmemories</span>.<br>
+                Run <span class="srccode">bot.py</span>. You must keep this running for the bot to work.<br>
                 On linux CLI, usage of tools such as "screen" is recommended.<br>
                 <b>This bot may take a while to start up on slow servers.</b><br>
                 Check that the bot appears "online".<br>
@@ -115,8 +115,8 @@
             </p>
 
             <p>
-                To update the bot, run git pull in the directory of the bot.py file.<br>
-                Updating may change dependancies. Run pip install -r requirements.txt again.<br>
+                To update the bot, run <span class="srccode">git pull</span> in the directory of the bot.py file.<br>
+                Updating may change dependancies. Run <span class="srccode">pip install -r requirements.txt</span> again.<br>
             </p>
 
             <h2>Privacy / Security</h2>
@@ -141,7 +141,7 @@
             <h2>Fallbacks</h2>
 
             <p>
-                The bot will fall back to Cloudflare AI's Llama 3 model in some cases when Gemini API fails.<br>
+                The bot will fall back to Cloudflare AI's Llama 3.1 model in some cases when Gemini API fails.<br>
                 This may be due to a rate limit, or because something else happened.<br>
                 You may notice degraded response performance (both speed and quality) when this happens.<br>
             </p>
